@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  llvm18:
+    build:
+      context: .
+      dockerfile: docker/llvm18/Dockerfile
+    container_name: clang18
+    shm_size: '8g'
+    network_mode: host
+    volumes:
+      - type: bind
+        source: .
+        target: /work
+    working_dir: /work
+    environment:
+      - HOST_UID=${UID}
+      - HOST_GID=${GID}
+    tty: true
