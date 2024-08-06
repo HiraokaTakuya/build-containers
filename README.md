@@ -1,11 +1,23 @@
-# cpp-docker-container
+# build-containers
 
-This is a repository for setting up a container for C++ builds.
+This repository contains container files used for building software.
 
-## Starting the Container
+## Starting containers
 
 ```
-docker compose run --rm -e HOST_UID=$(id -u) -e HOST_GID=$(id -g) llvm18 bash
+docker compose run --rm -e HOST_UID=$(id -u) -e HOST_GID=$(id -g) clang-18 bash
+```
+
+## Remove containers
+
+```
+docker compose down
+```
+
+To remove images too:
+
+```
+docker compose down --rmi all
 ```
 
 ## License

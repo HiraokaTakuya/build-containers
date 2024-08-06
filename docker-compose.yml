@@ -1,11 +1,11 @@
 version: '3.8'
 
 services:
-  llvm18:
+  clang-18:
     build:
       context: .
-      dockerfile: docker/llvm18/Dockerfile
-    container_name: clang18
+      dockerfile: docker/clang-18/Dockerfile
+    container_name: clang-18
     shm_size: '8g'
     network_mode: host
     volumes:
